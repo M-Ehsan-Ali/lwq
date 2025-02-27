@@ -15,6 +15,258 @@ export type Scalars = {
   Float: { input: number; output: number; }
 };
 
+/** The Abc type */
+export type Abc = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithContentEditor & NodeWithFeaturedImage & NodeWithTemplate & NodeWithTitle & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'Abc';
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  abcId: Scalars['Int']['output'];
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<AbcToAbcConnection>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the abc object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the abc object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /** Added to the GraphQL Schema because the ACF Field Group &quot;Abc name&quot; was set to Show in GraphQL. */
+  name?: Maybe<Abc_Name>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<AbcToParentConnectionEdge>;
+  /** The password for the abc object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Connection between the Abc type and the Abc type */
+  preview?: Maybe<AbcToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to the node */
+  template?: Maybe<ContentTemplate>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The Abc type */
+export type AbcAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The Abc type */
+export type AbcContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The Abc type */
+export type AbcEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The Abc type */
+export type AbcEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The Abc type */
+export type AbcTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Connection to Abc Nodes */
+export type AbcConnection = {
+  /** A list of edges (relational context) between RootQuery and connected Abc Nodes */
+  edges: Array<AbcConnectionEdge>;
+  /** A list of connected Abc Nodes */
+  nodes: Array<Abc>;
+  /** Information about pagination in a connection. */
+  pageInfo: AbcConnectionPageInfo;
+};
+
+/** Edge between a Node and a connected Abc */
+export type AbcConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected Abc Node */
+  node: Abc;
+};
+
+/** Page Info on the connected AbcConnectionEdge */
+export type AbcConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Get information about the offset pagination state in the current connection */
+  offsetPagination?: Maybe<OffsetPaginationPageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum AbcIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  Slug = 'SLUG',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Connection between the Abc type and the Abc type */
+export type AbcToAbcConnection = AbcConnection & Connection & {
+  __typename?: 'AbcToAbcConnection';
+  /** Edges for the AbcToAbcConnection connection */
+  edges: Array<AbcToAbcConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Abc>;
+  /** Information about pagination in a connection. */
+  pageInfo: AbcToAbcConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type AbcToAbcConnectionEdge = AbcConnectionEdge & Edge & {
+  __typename?: 'AbcToAbcConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: Abc;
+};
+
+/** Page Info on the &quot;AbcToAbcConnection&quot; */
+export type AbcToAbcConnectionPageInfo = AbcConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'AbcToAbcConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Get information about the offset pagination state in the current connection */
+  offsetPagination?: Maybe<OffsetPaginationPageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the Abc type and the Abc type */
+export type AbcToParentConnectionEdge = AbcConnectionEdge & Edge & OneToOneConnection & {
+  __typename?: 'AbcToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: Abc;
+};
+
+/** Connection between the Abc type and the Abc type */
+export type AbcToPreviewConnectionEdge = AbcConnectionEdge & Edge & OneToOneConnection & {
+  __typename?: 'AbcToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Abc;
+};
+
+/** Field Group */
+export type Abc_Name = AcfFieldGroup & {
+  __typename?: 'Abc_Name';
+  designation?: Maybe<Scalars['String']['output']>;
+  /** The name of the ACF Field Group */
+  fieldGroupName?: Maybe<Scalars['String']['output']>;
+  logo?: Maybe<MediaItem>;
+  name?: Maybe<Scalars['String']['output']>;
+  review?: Maybe<Scalars['String']['output']>;
+};
+
 /** A Field Group registered by ACF */
 export type AcfFieldGroup = {
   /** The name of the ACF Field Group */
@@ -110,8 +362,6 @@ export type Category = DatabaseIdentifier & HierarchicalNode & HierarchicalTermN
   parentId?: Maybe<Scalars['ID']['output']>;
   /** Connection between the Category type and the post type */
   posts?: Maybe<CategoryToPostConnection>;
-  /** The Yoast SEO data of the Categories taxonomy. */
-  seo?: Maybe<TaxonomySeo>;
   /** An alphanumeric identifier for the object unique to its type. */
   slug?: Maybe<Scalars['String']['output']>;
   /** Connection between the Category type and the Taxonomy type */
@@ -211,8 +461,6 @@ export type CategoryConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -262,8 +510,6 @@ export type CategoryToAncestorsCategoryConnectionPageInfo = CategoryConnectionPa
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -299,8 +545,6 @@ export type CategoryToCategoryConnectionPageInfo = CategoryConnectionPageInfo & 
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -344,8 +588,6 @@ export type CategoryToCategoryConnectionWhereArgs = {
   /** Array of slugs to return term(s) for. Default empty. */
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
@@ -382,8 +624,6 @@ export type CategoryToContentNodeConnectionPageInfo = ContentNodeConnectionPageI
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -514,8 +754,6 @@ export type CategoryToPostConnectionPageInfo = PageInfo & PostConnectionPageInfo
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -784,8 +1022,6 @@ export type CommentConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -841,8 +1077,6 @@ export type CommentToCommentConnectionPageInfo = CommentConnectionPageInfo & Pag
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -903,8 +1137,8 @@ export type CommentToCommentConnectionWhereArgs = {
   parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Search term(s) to retrieve matching comments for. */
   search?: InputMaybe<Scalars['String']['input']>;
-  /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars['String']['input']>;
+  /** One or more Comment Statuses to limit results by */
+  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -1000,8 +1234,8 @@ export type CommentToParentCommentConnectionWhereArgs = {
   parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Search term(s) to retrieve matching comments for. */
   search?: InputMaybe<Scalars['String']['input']>;
-  /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars['String']['input']>;
+  /** One or more Comment Statuses to limit results by */
+  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -1130,8 +1364,6 @@ export type ContentNode = {
   previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
   /** Whether the object is a node in the preview state */
   previewRevisionId?: Maybe<Scalars['ID']['output']>;
-  /** The Yoast SEO data of the ContentNode */
-  seo?: Maybe<PostTypeSeo>;
   /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
   slug?: Maybe<Scalars['String']['output']>;
   /** The current status of the object */
@@ -1188,8 +1420,6 @@ export type ContentNodeConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -1264,8 +1494,6 @@ export type ContentNodeToEnqueuedScriptConnectionPageInfo = EnqueuedScriptConnec
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -1301,8 +1529,6 @@ export type ContentNodeToEnqueuedStylesheetConnectionPageInfo = EnqueuedStyleshe
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -1431,8 +1657,6 @@ export type ContentTypeConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -1440,11 +1664,17 @@ export type ContentTypeConnectionPageInfo = {
 /** Allowed Content Types */
 export enum ContentTypeEnum {
   /** The Type of Content object */
+  Abc = 'ABC',
+  /** The Type of Content object */
   Attachment = 'ATTACHMENT',
+  /** The Type of Content object */
+  News = 'NEWS',
   /** The Type of Content object */
   Page = 'PAGE',
   /** The Type of Content object */
   Post = 'POST',
+  /** The Type of Content object */
+  Projects = 'PROJECTS',
   /** The Type of Content object */
   Testimonials = 'TESTIMONIALS'
 }
@@ -1488,8 +1718,6 @@ export type ContentTypeToContentNodeConnectionPageInfo = ContentNodeConnectionPa
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -1611,8 +1839,6 @@ export type ContentTypeToTaxonomyConnectionPageInfo = PageInfo & TaxonomyConnect
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -1635,6 +1861,35 @@ export enum ContentTypesOfTagEnum {
   Post = 'POST'
 }
 
+/** Input for the createAbc mutation. */
+export type CreateAbcInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** The payload for the createAbc mutation. */
+export type CreateAbcPayload = {
+  __typename?: 'CreateAbcPayload';
+  /** The Post object mutation type. */
+  abc?: Maybe<Abc>;
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+};
+
 /** Input for the createCategory mutation. */
 export type CreateCategoryInput = {
   /** The slug that the category will be an alias of */
@@ -1645,7 +1900,9 @@ export type CreateCategoryInput = {
   description?: InputMaybe<Scalars['String']['input']>;
   /** The name of the category object to mutate */
   name: Scalars['String']['input'];
-  /** The ID of the category that should be set as the parent */
+  /** The database ID of the category that should be set as the parent. This field cannot be used in conjunction with parentId */
+  parentDatabaseId?: InputMaybe<Scalars['Int']['input']>;
+  /** The ID of the category that should be set as the parent. This field cannot be used in conjunction with parentDatabaseId */
   parentId?: InputMaybe<Scalars['ID']['input']>;
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
   slug?: InputMaybe<Scalars['String']['input']>;
@@ -1662,8 +1919,6 @@ export type CreateCategoryPayload = {
 
 /** Input for the createComment mutation. */
 export type CreateCommentInput = {
-  /** The approval status of the comment. */
-  approved?: InputMaybe<Scalars['String']['input']>;
   /** The name of the comment's author. */
   author?: InputMaybe<Scalars['String']['input']>;
   /** The email of the comment's author. */
@@ -1738,6 +1993,35 @@ export type CreateMediaItemPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The MediaItem object mutation type. */
   mediaItem?: Maybe<MediaItem>;
+};
+
+/** Input for the createNew mutation. */
+export type CreateNewInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** The payload for the createNew mutation. */
+export type CreateNewPayload = {
+  __typename?: 'CreateNewPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  new?: Maybe<New>;
 };
 
 /** Input for the createPage mutation. */
@@ -1843,6 +2127,35 @@ export type CreatePostPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The Post object mutation type. */
   post?: Maybe<Post>;
+};
+
+/** Input for the createProject mutation. */
+export type CreateProjectInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** The payload for the createProject mutation. */
+export type CreateProjectPayload = {
+  __typename?: 'CreateProjectPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  project?: Maybe<Project>;
 };
 
 /** Input for the createTag mutation. */
@@ -1999,6 +2312,29 @@ export type DefaultTemplate = ContentTemplate & {
   templateName?: Maybe<Scalars['String']['output']>;
 };
 
+/** Input for the deleteAbc mutation. */
+export type DeleteAbcInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the Abc to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteAbc mutation. */
+export type DeleteAbcPayload = {
+  __typename?: 'DeleteAbcPayload';
+  /** The object before it was deleted */
+  abc?: Maybe<Abc>;
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+};
+
 /** Input for the deleteCategory mutation. */
 export type DeleteCategoryInput = {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
@@ -2058,6 +2394,29 @@ export type DeleteMediaItemPayload = {
   deletedId?: Maybe<Scalars['ID']['output']>;
   /** The mediaItem before it was deleted */
   mediaItem?: Maybe<MediaItem>;
+};
+
+/** Input for the deleteNew mutation. */
+export type DeleteNewInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the New to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteNew mutation. */
+export type DeleteNewPayload = {
+  __typename?: 'DeleteNewPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+  /** The object before it was deleted */
+  new?: Maybe<New>;
 };
 
 /** Input for the deletePage mutation. */
@@ -2123,6 +2482,29 @@ export type DeletePostPayload = {
   deletedId?: Maybe<Scalars['ID']['output']>;
   /** The object before it was deleted */
   post?: Maybe<Post>;
+};
+
+/** Input for the deleteProject mutation. */
+export type DeleteProjectInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the Project to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteProject mutation. */
+export type DeleteProjectPayload = {
+  __typename?: 'DeleteProjectPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+  /** The object before it was deleted */
+  project?: Maybe<Project>;
 };
 
 /** Input for the deleteTag mutation. */
@@ -2225,6 +2607,8 @@ export type EnqueuedAsset = {
    * @deprecated Use `EnqueuedScript.extraData` instead.
    */
   extra?: Maybe<Scalars['String']['output']>;
+  /** The loading group to which this asset belongs. */
+  group?: Maybe<Scalars['Int']['output']>;
   /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']['output']>;
   /** The ID of the enqueued asset */
@@ -2258,6 +2642,10 @@ export type EnqueuedScript = EnqueuedAsset & Node & {
   extra?: Maybe<Scalars['String']['output']>;
   /** Extra data supplied to the enqueued script */
   extraData?: Maybe<Scalars['String']['output']>;
+  /** The loading group to which this asset belongs. */
+  group?: Maybe<Scalars['Int']['output']>;
+  /** The location where this script should be loaded */
+  groupLocation?: Maybe<ScriptLoadingGroupLocationEnum>;
   /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']['output']>;
   /** The global ID of the enqueued script */
@@ -2298,8 +2686,6 @@ export type EnqueuedScriptConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -2325,6 +2711,8 @@ export type EnqueuedStylesheet = EnqueuedAsset & Node & {
    * @deprecated Use `EnqueuedScript.extraData` instead.
    */
   extra?: Maybe<Scalars['String']['output']>;
+  /** The loading group to which this asset belongs. */
+  group?: Maybe<Scalars['Int']['output']>;
   /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']['output']>;
   /** The global ID of the enqueued stylesheet */
@@ -2375,8 +2763,6 @@ export type EnqueuedStylesheetConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -2466,8 +2852,6 @@ export type HierarchicalContentNode = {
   previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
   /** Whether the object is a node in the preview state */
   previewRevisionId?: Maybe<Scalars['ID']['output']>;
-  /** The Yoast SEO data of the ContentNode */
-  seo?: Maybe<PostTypeSeo>;
   /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
   slug?: Maybe<Scalars['String']['output']>;
   /** The current status of the object */
@@ -2547,8 +2931,6 @@ export type HierarchicalContentNodeToContentNodeAncestorsConnectionPageInfo = Co
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -2670,8 +3052,6 @@ export type HierarchicalContentNodeToContentNodeChildrenConnectionPageInfo = Con
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -2852,6 +3232,8 @@ export type MediaDetails = {
   __typename?: 'MediaDetails';
   /** The filename of the mediaItem */
   file?: Maybe<Scalars['String']['output']>;
+  /** The path to the mediaItem relative to the uploads directory */
+  filePath?: Maybe<Scalars['String']['output']>;
   /** The height of the mediaItem */
   height?: Maybe<Scalars['Int']['output']>;
   /** Meta information associated with the mediaItem */
@@ -2914,6 +3296,10 @@ export type MediaItem = ContentNode & DatabaseIdentifier & HierarchicalContentNo
   enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
   /** Connection between the ContentNode type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** The filename of the mediaItem for the specified size (default size is full) */
+  file?: Maybe<Scalars['String']['output']>;
+  /** The path to the original file relative to the uploads directory */
+  filePath?: Maybe<Scalars['String']['output']>;
   /** The filesize in bytes of the resource */
   fileSize?: Maybe<Scalars['Int']['output']>;
   /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
@@ -2969,8 +3355,6 @@ export type MediaItem = ContentNode & DatabaseIdentifier & HierarchicalContentNo
   previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
   /** Whether the object is a node in the preview state */
   previewRevisionId?: Maybe<Scalars['ID']['output']>;
-  /** The Yoast SEO data of the ContentNode */
-  seo?: Maybe<PostTypeSeo>;
   /** The sizes attribute value for an image. */
   sizes?: Maybe<Scalars['String']['output']>;
   /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
@@ -3051,6 +3435,18 @@ export type MediaItemEnqueuedStylesheetsArgs = {
 
 
 /** The mediaItem type */
+export type MediaItemFileArgs = {
+  size?: InputMaybe<MediaItemSizeEnum>;
+};
+
+
+/** The mediaItem type */
+export type MediaItemFilePathArgs = {
+  size?: InputMaybe<MediaItemSizeEnum>;
+};
+
+
+/** The mediaItem type */
 export type MediaItemFileSizeArgs = {
   size?: InputMaybe<MediaItemSizeEnum>;
 };
@@ -3107,8 +3503,6 @@ export type MediaItemConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -3219,8 +3613,6 @@ export type MediaItemToCommentConnectionPageInfo = CommentConnectionPageInfo & P
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -3281,8 +3673,8 @@ export type MediaItemToCommentConnectionWhereArgs = {
   parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Search term(s) to retrieve matching comments for. */
   search?: InputMaybe<Scalars['String']['input']>;
-  /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars['String']['input']>;
+  /** One or more Comment Statuses to limit results by */
+  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -3292,6 +3684,8 @@ export type MediaSize = {
   __typename?: 'MediaSize';
   /** The filename of the referenced size */
   file?: Maybe<Scalars['String']['output']>;
+  /** The path of the file for the referenced size (default size is full) */
+  filePath?: Maybe<Scalars['String']['output']>;
   /** The filesize of the resource */
   fileSize?: Maybe<Scalars['Int']['output']>;
   /** The height of the referenced size */
@@ -3370,8 +3764,6 @@ export type MenuConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -3467,8 +3859,6 @@ export type MenuItemConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -3510,7 +3900,7 @@ export enum MenuItemNodeIdTypeEnum {
 }
 
 /** Deprecated in favor of MenuItemLinkeable Interface */
-export type MenuItemObjectUnion = Category | Page | Post | Tag | Testimonial;
+export type MenuItemObjectUnion = Abc | Category | New | Page | Post | Project | Tag | Testimonial;
 
 /** Connection between the MenuItem type and the Menu type */
 export type MenuItemToMenuConnectionEdge = Edge & MenuConnectionEdge & OneToOneConnection & {
@@ -3552,8 +3942,6 @@ export type MenuItemToMenuItemConnectionPageInfo = MenuItemConnectionPageInfo & 
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -3630,8 +4018,6 @@ export type MenuToMenuItemConnectionPageInfo = MenuItemConnectionPageInfo & Page
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -3838,6 +4224,261 @@ export enum MimeTypeEnum {
   VideoXMsWmx = 'VIDEO_X_MS_WMX'
 }
 
+/** The New type */
+export type New = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithContentEditor & NodeWithFeaturedImage & NodeWithTemplate & NodeWithTitle & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'New';
+  /** Added to the GraphQL Schema because the ACF Field Group &quot;News&quot; was set to Show in GraphQL. */
+  New?: Maybe<New_New>;
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<NewToNewConnection>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the news object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the news object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  newId: Scalars['Int']['output'];
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<NewToParentConnectionEdge>;
+  /** The password for the news object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Connection between the New type and the New type */
+  preview?: Maybe<NewToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to the node */
+  template?: Maybe<ContentTemplate>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The New type */
+export type NewAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The New type */
+export type NewContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The New type */
+export type NewEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The New type */
+export type NewEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The New type */
+export type NewTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Connection to New Nodes */
+export type NewConnection = {
+  /** A list of edges (relational context) between RootQuery and connected New Nodes */
+  edges: Array<NewConnectionEdge>;
+  /** A list of connected New Nodes */
+  nodes: Array<New>;
+  /** Information about pagination in a connection. */
+  pageInfo: NewConnectionPageInfo;
+};
+
+/** Edge between a Node and a connected New */
+export type NewConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected New Node */
+  node: New;
+};
+
+/** Page Info on the connected NewConnectionEdge */
+export type NewConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Get information about the offset pagination state in the current connection */
+  offsetPagination?: Maybe<OffsetPaginationPageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum NewIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  Slug = 'SLUG',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Connection between the New type and the New type */
+export type NewToNewConnection = Connection & NewConnection & {
+  __typename?: 'NewToNewConnection';
+  /** Edges for the NewToNewConnection connection */
+  edges: Array<NewToNewConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<New>;
+  /** Information about pagination in a connection. */
+  pageInfo: NewToNewConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type NewToNewConnectionEdge = Edge & NewConnectionEdge & {
+  __typename?: 'NewToNewConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: New;
+};
+
+/** Page Info on the &quot;NewToNewConnection&quot; */
+export type NewToNewConnectionPageInfo = NewConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'NewToNewConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Get information about the offset pagination state in the current connection */
+  offsetPagination?: Maybe<OffsetPaginationPageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the New type and the New type */
+export type NewToParentConnectionEdge = Edge & NewConnectionEdge & OneToOneConnection & {
+  __typename?: 'NewToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: New;
+};
+
+/** Connection between the New type and the New type */
+export type NewToPreviewConnectionEdge = Edge & NewConnectionEdge & OneToOneConnection & {
+  __typename?: 'NewToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: New;
+};
+
+/** Field Group */
+export type New_New = AcfFieldGroup & {
+  __typename?: 'New_New';
+  about?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  /** The name of the ACF Field Group */
+  fieldGroupName?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<MediaItem>;
+  readtime?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  userimage?: Maybe<MediaItem>;
+  username?: Maybe<Scalars['String']['output']>;
+};
+
 /** An object with an ID */
 export type Node = {
   /** The globally unique ID for the object */
@@ -3963,8 +4604,6 @@ export type NodeWithTemplate = {
 export type NodeWithTitle = {
   /** The globally unique ID for the object */
   id: Scalars['ID']['output'];
-  /** The Yoast SEO data of the ContentNode */
-  seo?: Maybe<PostTypeSeo>;
   /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
   title?: Maybe<Scalars['String']['output']>;
 };
@@ -4126,8 +4765,6 @@ export type Page = ContentNode & DatabaseIdentifier & HierarchicalContentNode & 
   revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
   /** Connection between the Page type and the page type */
   revisions?: Maybe<PageToRevisionConnection>;
-  /** The Yoast SEO data of the ContentNode */
-  seo?: Maybe<PostTypeSeo>;
   /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
   slug?: Maybe<Scalars['String']['output']>;
   /** The current status of the object */
@@ -4238,8 +4875,6 @@ export type PageConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -4297,8 +4932,6 @@ export type PageToCommentConnectionPageInfo = CommentConnectionPageInfo & PageIn
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -4359,8 +4992,8 @@ export type PageToCommentConnectionWhereArgs = {
   parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Search term(s) to retrieve matching comments for. */
   search?: InputMaybe<Scalars['String']['input']>;
-  /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars['String']['input']>;
+  /** One or more Comment Statuses to limit results by */
+  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -4405,8 +5038,6 @@ export type PageToRevisionConnectionPageInfo = PageConnectionPageInfo & PageInfo
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -4554,8 +5185,6 @@ export type PluginConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -4686,12 +5315,12 @@ export type Post = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & 
   previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
   /** Whether the object is a node in the preview state */
   previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** Added to the GraphQL Schema because the ACF Field Group &quot;projects&quot; was set to Show in GraphQL. */
+  projects?: Maybe<Post_Projects>;
   /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
   revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
   /** Connection between the Post type and the post type */
   revisions?: Maybe<PostToRevisionConnection>;
-  /** The Yoast SEO data of the ContentNode */
-  seo?: Maybe<PostTypeSeo>;
   /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
   slug?: Maybe<Scalars['String']['output']>;
   /** The current status of the object */
@@ -4863,8 +5492,6 @@ export type PostConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -4909,8 +5536,6 @@ export type PostFormat = DatabaseIdentifier & Node & TermNode & UniformResourceI
   postFormatId?: Maybe<Scalars['Int']['output']>;
   /** Connection between the PostFormat type and the post type */
   posts?: Maybe<PostFormatToPostConnection>;
-  /** The Yoast SEO data of the Formats taxonomy. */
-  seo?: Maybe<TaxonomySeo>;
   /** An alphanumeric identifier for the object unique to its type. */
   slug?: Maybe<Scalars['String']['output']>;
   /** Connection between the PostFormat type and the Taxonomy type */
@@ -4991,8 +5616,6 @@ export type PostFormatConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -5042,8 +5665,6 @@ export type PostFormatToContentNodeConnectionPageInfo = ContentNodeConnectionPag
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -5165,8 +5786,6 @@ export type PostFormatToPostConnectionPageInfo = PageInfo & PostConnectionPageIn
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -5438,8 +6057,6 @@ export type PostToCategoryConnectionEdge = CategoryConnectionEdge & Edge & {
   __typename?: 'PostToCategoryConnectionEdge';
   /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']['output']>;
-  /** The Yoast SEO Primary category */
-  isPrimary?: Maybe<Scalars['Boolean']['output']>;
   /** The item at the end of the edge */
   node: Category;
 };
@@ -5455,8 +6072,6 @@ export type PostToCategoryConnectionPageInfo = CategoryConnectionPageInfo & Page
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -5500,8 +6115,6 @@ export type PostToCategoryConnectionWhereArgs = {
   /** Array of slugs to return term(s) for. Default empty. */
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
@@ -5538,8 +6151,6 @@ export type PostToCommentConnectionPageInfo = CommentConnectionPageInfo & PageIn
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -5600,8 +6211,8 @@ export type PostToCommentConnectionWhereArgs = {
   parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Search term(s) to retrieve matching comments for. */
   search?: InputMaybe<Scalars['String']['input']>;
-  /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars['String']['input']>;
+  /** One or more Comment Statuses to limit results by */
+  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -5655,8 +6266,6 @@ export type PostToPostConnectionPageInfo = PageInfo & PostConnectionPageInfo & W
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -5677,8 +6286,6 @@ export type PostToPostFormatConnectionEdge = Edge & PostFormatConnectionEdge & {
   __typename?: 'PostToPostFormatConnectionEdge';
   /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']['output']>;
-  /** The Yoast SEO Primary post_format */
-  isPrimary?: Maybe<Scalars['Boolean']['output']>;
   /** The item at the end of the edge */
   node: PostFormat;
 };
@@ -5694,8 +6301,6 @@ export type PostToPostFormatConnectionPageInfo = PageInfo & PostFormatConnection
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -5738,8 +6343,6 @@ export type PostToPostFormatConnectionWhereArgs = {
   search?: InputMaybe<Scalars['String']['input']>;
   /** Array of slugs to return term(s) for. Default empty. */
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
@@ -5786,8 +6389,6 @@ export type PostToRevisionConnectionPageInfo = PageInfo & PostConnectionPageInfo
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -5920,8 +6521,6 @@ export type PostToTagConnectionEdge = Edge & TagConnectionEdge & {
   __typename?: 'PostToTagConnectionEdge';
   /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']['output']>;
-  /** The Yoast SEO Primary post_tag */
-  isPrimary?: Maybe<Scalars['Boolean']['output']>;
   /** The item at the end of the edge */
   node: Tag;
 };
@@ -5937,8 +6536,6 @@ export type PostToTagConnectionPageInfo = PageInfo & TagConnectionPageInfo & WpP
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -5982,8 +6579,6 @@ export type PostToTagConnectionWhereArgs = {
   /** Array of slugs to return term(s) for. Default empty. */
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
@@ -6020,8 +6615,6 @@ export type PostToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPage
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -6066,8 +6659,6 @@ export type PostToTermNodeConnectionWhereArgs = {
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** The Taxonomy to filter terms by */
   taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
@@ -6129,33 +6720,15 @@ export type PostTypeLabelDetails = {
   viewItems?: Maybe<Scalars['String']['output']>;
 };
 
-export type PostTypeSeo = {
-  __typename?: 'PostTypeSEO';
-  breadcrumbs?: Maybe<Array<Maybe<SeoPostTypeBreadcrumbs>>>;
-  canonical?: Maybe<Scalars['String']['output']>;
-  cornerstone?: Maybe<Scalars['Boolean']['output']>;
-  focuskw?: Maybe<Scalars['String']['output']>;
-  fullHead?: Maybe<Scalars['String']['output']>;
-  metaDesc?: Maybe<Scalars['String']['output']>;
-  metaKeywords?: Maybe<Scalars['String']['output']>;
-  metaRobotsNofollow?: Maybe<Scalars['String']['output']>;
-  metaRobotsNoindex?: Maybe<Scalars['String']['output']>;
-  opengraphAuthor?: Maybe<Scalars['String']['output']>;
-  opengraphDescription?: Maybe<Scalars['String']['output']>;
-  opengraphImage?: Maybe<MediaItem>;
-  opengraphModifiedTime?: Maybe<Scalars['String']['output']>;
-  opengraphPublishedTime?: Maybe<Scalars['String']['output']>;
-  opengraphPublisher?: Maybe<Scalars['String']['output']>;
-  opengraphSiteName?: Maybe<Scalars['String']['output']>;
-  opengraphTitle?: Maybe<Scalars['String']['output']>;
-  opengraphType?: Maybe<Scalars['String']['output']>;
-  opengraphUrl?: Maybe<Scalars['String']['output']>;
-  readingTime?: Maybe<Scalars['Float']['output']>;
-  schema?: Maybe<SeoPostTypeSchema>;
+/** Field Group */
+export type Post_Projects = AcfFieldGroup & {
+  __typename?: 'Post_Projects';
+  color?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  /** The name of the ACF Field Group */
+  fieldGroupName?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<MediaItem>;
   title?: Maybe<Scalars['String']['output']>;
-  twitterDescription?: Maybe<Scalars['String']['output']>;
-  twitterImage?: Maybe<MediaItem>;
-  twitterTitle?: Maybe<Scalars['String']['output']>;
 };
 
 /** Nodes that can be seen in a preview (unpublished) state. */
@@ -6166,6 +6739,258 @@ export type Previewable = {
   previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
   /** Whether the object is a node in the preview state */
   previewRevisionId?: Maybe<Scalars['ID']['output']>;
+};
+
+/** The Project type */
+export type Project = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithContentEditor & NodeWithFeaturedImage & NodeWithTemplate & NodeWithTitle & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'Project';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<ProjectToProjectConnection>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the projects object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the projects object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<ProjectToParentConnectionEdge>;
+  /** The password for the projects object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Connection between the Project type and the Project type */
+  preview?: Maybe<ProjectToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  projectId: Scalars['Int']['output'];
+  /** Added to the GraphQL Schema because the ACF Field Group &quot;projects&quot; was set to Show in GraphQL. */
+  projects?: Maybe<Project_Projects>;
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to the node */
+  template?: Maybe<ContentTemplate>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The Project type */
+export type ProjectAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The Project type */
+export type ProjectContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The Project type */
+export type ProjectEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The Project type */
+export type ProjectEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The Project type */
+export type ProjectTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Connection to Project Nodes */
+export type ProjectConnection = {
+  /** A list of edges (relational context) between RootQuery and connected Project Nodes */
+  edges: Array<ProjectConnectionEdge>;
+  /** A list of connected Project Nodes */
+  nodes: Array<Project>;
+  /** Information about pagination in a connection. */
+  pageInfo: ProjectConnectionPageInfo;
+};
+
+/** Edge between a Node and a connected Project */
+export type ProjectConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected Project Node */
+  node: Project;
+};
+
+/** Page Info on the connected ProjectConnectionEdge */
+export type ProjectConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Get information about the offset pagination state in the current connection */
+  offsetPagination?: Maybe<OffsetPaginationPageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum ProjectIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  Slug = 'SLUG',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Connection between the Project type and the Project type */
+export type ProjectToParentConnectionEdge = Edge & OneToOneConnection & ProjectConnectionEdge & {
+  __typename?: 'ProjectToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: Project;
+};
+
+/** Connection between the Project type and the Project type */
+export type ProjectToPreviewConnectionEdge = Edge & OneToOneConnection & ProjectConnectionEdge & {
+  __typename?: 'ProjectToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Project;
+};
+
+/** Connection between the Project type and the Project type */
+export type ProjectToProjectConnection = Connection & ProjectConnection & {
+  __typename?: 'ProjectToProjectConnection';
+  /** Edges for the ProjectToProjectConnection connection */
+  edges: Array<ProjectToProjectConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Project>;
+  /** Information about pagination in a connection. */
+  pageInfo: ProjectToProjectConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type ProjectToProjectConnectionEdge = Edge & ProjectConnectionEdge & {
+  __typename?: 'ProjectToProjectConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: Project;
+};
+
+/** Page Info on the &quot;ProjectToProjectConnection&quot; */
+export type ProjectToProjectConnectionPageInfo = PageInfo & ProjectConnectionPageInfo & WpPageInfo & {
+  __typename?: 'ProjectToProjectConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Get information about the offset pagination state in the current connection */
+  offsetPagination?: Maybe<OffsetPaginationPageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Field Group */
+export type Project_Projects = AcfFieldGroup & {
+  __typename?: 'Project_Projects';
+  color?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  /** The name of the ACF Field Group */
+  fieldGroupName?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<MediaItem>;
+  title?: Maybe<Scalars['String']['output']>;
 };
 
 /** The reading setting type */
@@ -6279,36 +7104,48 @@ export type RestoreCommentPayload = {
 /** The root mutation */
 export type RootMutation = {
   __typename?: 'RootMutation';
+  /** The createAbc mutation */
+  createAbc?: Maybe<CreateAbcPayload>;
   /** The createCategory mutation */
   createCategory?: Maybe<CreateCategoryPayload>;
   /** The createComment mutation */
   createComment?: Maybe<CreateCommentPayload>;
   /** The createMediaItem mutation */
   createMediaItem?: Maybe<CreateMediaItemPayload>;
+  /** The createNew mutation */
+  createNew?: Maybe<CreateNewPayload>;
   /** The createPage mutation */
   createPage?: Maybe<CreatePagePayload>;
   /** The createPost mutation */
   createPost?: Maybe<CreatePostPayload>;
   /** The createPostFormat mutation */
   createPostFormat?: Maybe<CreatePostFormatPayload>;
+  /** The createProject mutation */
+  createProject?: Maybe<CreateProjectPayload>;
   /** The createTag mutation */
   createTag?: Maybe<CreateTagPayload>;
   /** The createTestimonial mutation */
   createTestimonial?: Maybe<CreateTestimonialPayload>;
   /** The createUser mutation */
   createUser?: Maybe<CreateUserPayload>;
+  /** The deleteAbc mutation */
+  deleteAbc?: Maybe<DeleteAbcPayload>;
   /** The deleteCategory mutation */
   deleteCategory?: Maybe<DeleteCategoryPayload>;
   /** The deleteComment mutation */
   deleteComment?: Maybe<DeleteCommentPayload>;
   /** The deleteMediaItem mutation */
   deleteMediaItem?: Maybe<DeleteMediaItemPayload>;
+  /** The deleteNew mutation */
+  deleteNew?: Maybe<DeleteNewPayload>;
   /** The deletePage mutation */
   deletePage?: Maybe<DeletePagePayload>;
   /** The deletePost mutation */
   deletePost?: Maybe<DeletePostPayload>;
   /** The deletePostFormat mutation */
   deletePostFormat?: Maybe<DeletePostFormatPayload>;
+  /** The deleteProject mutation */
+  deleteProject?: Maybe<DeleteProjectPayload>;
   /** The deleteTag mutation */
   deleteTag?: Maybe<DeleteTagPayload>;
   /** The deleteTestimonial mutation */
@@ -6327,18 +7164,24 @@ export type RootMutation = {
   sendEmail?: Maybe<SendEmailPayload>;
   /** Send password reset email to user */
   sendPasswordResetEmail?: Maybe<SendPasswordResetEmailPayload>;
+  /** The updateAbc mutation */
+  updateAbc?: Maybe<UpdateAbcPayload>;
   /** The updateCategory mutation */
   updateCategory?: Maybe<UpdateCategoryPayload>;
   /** The updateComment mutation */
   updateComment?: Maybe<UpdateCommentPayload>;
   /** The updateMediaItem mutation */
   updateMediaItem?: Maybe<UpdateMediaItemPayload>;
+  /** The updateNew mutation */
+  updateNew?: Maybe<UpdateNewPayload>;
   /** The updatePage mutation */
   updatePage?: Maybe<UpdatePagePayload>;
   /** The updatePost mutation */
   updatePost?: Maybe<UpdatePostPayload>;
   /** The updatePostFormat mutation */
   updatePostFormat?: Maybe<UpdatePostFormatPayload>;
+  /** The updateProject mutation */
+  updateProject?: Maybe<UpdateProjectPayload>;
   /** The updateSettings mutation */
   updateSettings?: Maybe<UpdateSettingsPayload>;
   /** The updateTag mutation */
@@ -6347,6 +7190,12 @@ export type RootMutation = {
   updateTestimonial?: Maybe<UpdateTestimonialPayload>;
   /** The updateUser mutation */
   updateUser?: Maybe<UpdateUserPayload>;
+};
+
+
+/** The root mutation */
+export type RootMutationCreateAbcArgs = {
+  input: CreateAbcInput;
 };
 
 
@@ -6369,6 +7218,12 @@ export type RootMutationCreateMediaItemArgs = {
 
 
 /** The root mutation */
+export type RootMutationCreateNewArgs = {
+  input: CreateNewInput;
+};
+
+
+/** The root mutation */
 export type RootMutationCreatePageArgs = {
   input: CreatePageInput;
 };
@@ -6383,6 +7238,12 @@ export type RootMutationCreatePostArgs = {
 /** The root mutation */
 export type RootMutationCreatePostFormatArgs = {
   input: CreatePostFormatInput;
+};
+
+
+/** The root mutation */
+export type RootMutationCreateProjectArgs = {
+  input: CreateProjectInput;
 };
 
 
@@ -6405,6 +7266,12 @@ export type RootMutationCreateUserArgs = {
 
 
 /** The root mutation */
+export type RootMutationDeleteAbcArgs = {
+  input: DeleteAbcInput;
+};
+
+
+/** The root mutation */
 export type RootMutationDeleteCategoryArgs = {
   input: DeleteCategoryInput;
 };
@@ -6423,6 +7290,12 @@ export type RootMutationDeleteMediaItemArgs = {
 
 
 /** The root mutation */
+export type RootMutationDeleteNewArgs = {
+  input: DeleteNewInput;
+};
+
+
+/** The root mutation */
 export type RootMutationDeletePageArgs = {
   input: DeletePageInput;
 };
@@ -6437,6 +7310,12 @@ export type RootMutationDeletePostArgs = {
 /** The root mutation */
 export type RootMutationDeletePostFormatArgs = {
   input: DeletePostFormatInput;
+};
+
+
+/** The root mutation */
+export type RootMutationDeleteProjectArgs = {
+  input: DeleteProjectInput;
 };
 
 
@@ -6495,6 +7374,12 @@ export type RootMutationSendPasswordResetEmailArgs = {
 
 
 /** The root mutation */
+export type RootMutationUpdateAbcArgs = {
+  input: UpdateAbcInput;
+};
+
+
+/** The root mutation */
 export type RootMutationUpdateCategoryArgs = {
   input: UpdateCategoryInput;
 };
@@ -6513,6 +7398,12 @@ export type RootMutationUpdateMediaItemArgs = {
 
 
 /** The root mutation */
+export type RootMutationUpdateNewArgs = {
+  input: UpdateNewInput;
+};
+
+
+/** The root mutation */
 export type RootMutationUpdatePageArgs = {
   input: UpdatePageInput;
 };
@@ -6527,6 +7418,12 @@ export type RootMutationUpdatePostArgs = {
 /** The root mutation */
 export type RootMutationUpdatePostFormatArgs = {
   input: UpdatePostFormatInput;
+};
+
+
+/** The root mutation */
+export type RootMutationUpdateProjectArgs = {
+  input: UpdateProjectInput;
 };
 
 
@@ -6556,6 +7453,15 @@ export type RootMutationUpdateUserArgs = {
 /** The root entry point into the Graph */
 export type RootQuery = {
   __typename?: 'RootQuery';
+  /** An object of the Abc Type.  */
+  abc?: Maybe<Abc>;
+  /**
+   * A Abc object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  abcBy?: Maybe<Abc>;
+  /** Connection between the RootQuery type and the Abc type */
+  abcs?: Maybe<RootQueryToAbcConnection>;
   /** Entry point to get all settings for the site */
   allSettings?: Maybe<Settings>;
   /** Connection between the RootQuery type and the category type */
@@ -6595,6 +7501,15 @@ export type RootQuery = {
   menuItems?: Maybe<RootQueryToMenuItemConnection>;
   /** Connection between the RootQuery type and the Menu type */
   menus?: Maybe<RootQueryToMenuConnection>;
+  /** An object of the New Type.  */
+  new?: Maybe<New>;
+  /**
+   * A New object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  newBy?: Maybe<New>;
+  /** Connection between the RootQuery type and the New type */
+  news?: Maybe<RootQueryToNewConnection>;
   /** Fetches an object given its ID */
   node?: Maybe<Node>;
   /** Fetches an object given its Unique Resource Identifier */
@@ -6625,6 +7540,15 @@ export type RootQuery = {
   postFormats?: Maybe<RootQueryToPostFormatConnection>;
   /** Connection between the RootQuery type and the post type */
   posts?: Maybe<RootQueryToPostConnection>;
+  /** An object of the Project Type.  */
+  project?: Maybe<Project>;
+  /**
+   * A Project object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  projectBy?: Maybe<Project>;
+  /** Connection between the RootQuery type and the Project type */
+  projects?: Maybe<RootQueryToProjectConnection>;
   /** Fields of the &#039;ReadingSettings&#039; settings group */
   readingSettings?: Maybe<ReadingSettings>;
   /** Connection between the RootQuery type and the EnqueuedScript type */
@@ -6633,8 +7557,6 @@ export type RootQuery = {
   registeredStylesheets?: Maybe<RootQueryToEnqueuedStylesheetConnection>;
   /** Connection between the RootQuery type and the ContentNode type */
   revisions?: Maybe<RootQueryToRevisionsConnection>;
-  /** Returns seo site data */
-  seo?: Maybe<SeoConfig>;
   /** A 0bject */
   tag?: Maybe<Tag>;
   /** Connection between the RootQuery type and the tag type */
@@ -6672,6 +7594,33 @@ export type RootQuery = {
   viewer?: Maybe<User>;
   /** Fields of the &#039;WritingSettings&#039; settings group */
   writingSettings?: Maybe<WritingSettings>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryAbcArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<AbcIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryAbcByArgs = {
+  abcId?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryAbcsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToAbcConnectionWhereArgs>;
 };
 
 
@@ -6806,6 +7755,33 @@ export type RootQueryMenusArgs = {
 
 
 /** The root entry point into the Graph */
+export type RootQueryNewArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<NewIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryNewByArgs = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+  newId?: InputMaybe<Scalars['Int']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryNewsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToNewConnectionWhereArgs>;
+};
+
+
+/** The root entry point into the Graph */
 export type RootQueryNodeArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -6900,6 +7876,33 @@ export type RootQueryPostsArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<RootQueryToPostConnectionWhereArgs>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryProjectArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<ProjectIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryProjectByArgs = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+  projectId?: InputMaybe<Scalars['Int']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryProjectsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToProjectConnectionWhereArgs>;
 };
 
 
@@ -7055,6 +8058,127 @@ export type RootQueryUsersArgs = {
   where?: InputMaybe<RootQueryToUserConnectionWhereArgs>;
 };
 
+/** Connection between the RootQuery type and the Abc type */
+export type RootQueryToAbcConnection = AbcConnection & Connection & {
+  __typename?: 'RootQueryToAbcConnection';
+  /** Edges for the RootQueryToAbcConnection connection */
+  edges: Array<RootQueryToAbcConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Abc>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToAbcConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToAbcConnectionEdge = AbcConnectionEdge & Edge & {
+  __typename?: 'RootQueryToAbcConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Abc;
+};
+
+/** Page Info on the &quot;RootQueryToAbcConnection&quot; */
+export type RootQueryToAbcConnectionPageInfo = AbcConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToAbcConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Get information about the offset pagination state in the current connection */
+  offsetPagination?: Maybe<OffsetPaginationPageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToAbcConnection connection */
+export type RootQueryToAbcConnectionWhereArgs = {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  metaQuery?: InputMaybe<RootQueryToAbcConnectionWhereArgsMetaQuery>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Paginate Abcs with offsets */
+  offsetPagination?: InputMaybe<OffsetPagination>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type RootQueryToAbcConnectionWhereArgsMetaArray = {
+  /** Custom field value */
+  compare?: InputMaybe<RootQueryToAbcConnectionWhereArgsMetaCompareEnum>;
+  /** Custom field key */
+  key?: InputMaybe<Scalars['String']['input']>;
+  /** Custom field value */
+  type?: InputMaybe<RootQueryToAbcConnectionWhereArgsMetaTypeEnum>;
+  /** Custom field value */
+  value?: InputMaybe<Scalars['String']['input']>;
+};
+
+export enum RootQueryToAbcConnectionWhereArgsMetaCompareEnum {
+  Between = 'BETWEEN',
+  EqualTo = 'EQUAL_TO',
+  Exists = 'EXISTS',
+  GreaterThan = 'GREATER_THAN',
+  GreaterThanOrEqualTo = 'GREATER_THAN_OR_EQUAL_TO',
+  In = 'IN',
+  LessThan = 'LESS_THAN',
+  LessThanOrEqualTo = 'LESS_THAN_OR_EQUAL_TO',
+  Like = 'LIKE',
+  NotBetween = 'NOT_BETWEEN',
+  NotEqualTo = 'NOT_EQUAL_TO',
+  NotExists = 'NOT_EXISTS',
+  NotIn = 'NOT_IN',
+  NotLike = 'NOT_LIKE'
+}
+
+export type RootQueryToAbcConnectionWhereArgsMetaQuery = {
+  metaArray?: InputMaybe<Array<InputMaybe<RootQueryToAbcConnectionWhereArgsMetaArray>>>;
+  relation?: InputMaybe<RelationEnum>;
+};
+
+export enum RootQueryToAbcConnectionWhereArgsMetaTypeEnum {
+  Binary = 'BINARY',
+  Char = 'CHAR',
+  Date = 'DATE',
+  Datetime = 'DATETIME',
+  Decimal = 'DECIMAL',
+  Numeric = 'NUMERIC',
+  Signed = 'SIGNED',
+  Time = 'TIME',
+  Unsigned = 'UNSIGNED'
+}
+
 /** Connection between the RootQuery type and the category type */
 export type RootQueryToCategoryConnection = CategoryConnection & Connection & {
   __typename?: 'RootQueryToCategoryConnection';
@@ -7086,8 +8210,6 @@ export type RootQueryToCategoryConnectionPageInfo = CategoryConnectionPageInfo &
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7131,8 +8253,6 @@ export type RootQueryToCategoryConnectionWhereArgs = {
   /** Array of slugs to return term(s) for. Default empty. */
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
@@ -7169,8 +8289,6 @@ export type RootQueryToCommentConnectionPageInfo = CommentConnectionPageInfo & P
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7231,8 +8349,8 @@ export type RootQueryToCommentConnectionWhereArgs = {
   parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Search term(s) to retrieve matching comments for. */
   search?: InputMaybe<Scalars['String']['input']>;
-  /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars['String']['input']>;
+  /** One or more Comment Statuses to limit results by */
+  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -7268,8 +8386,6 @@ export type RootQueryToContentNodeConnectionPageInfo = ContentNodeConnectionPage
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7393,8 +8509,6 @@ export type RootQueryToContentTypeConnectionPageInfo = ContentTypeConnectionPage
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7430,8 +8544,6 @@ export type RootQueryToEnqueuedScriptConnectionPageInfo = EnqueuedScriptConnecti
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7467,8 +8579,6 @@ export type RootQueryToEnqueuedStylesheetConnectionPageInfo = EnqueuedStylesheet
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7504,8 +8614,6 @@ export type RootQueryToMediaItemConnectionPageInfo = MediaItemConnectionPageInfo
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7635,8 +8743,6 @@ export type RootQueryToMenuConnectionPageInfo = MenuConnectionPageInfo & PageInf
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7682,8 +8788,6 @@ export type RootQueryToMenuItemConnectionPageInfo = MenuItemConnectionPageInfo &
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7699,6 +8803,127 @@ export type RootQueryToMenuItemConnectionWhereArgs = {
   /** The ID of the parent menu object */
   parentId?: InputMaybe<Scalars['ID']['input']>;
 };
+
+/** Connection between the RootQuery type and the New type */
+export type RootQueryToNewConnection = Connection & NewConnection & {
+  __typename?: 'RootQueryToNewConnection';
+  /** Edges for the RootQueryToNewConnection connection */
+  edges: Array<RootQueryToNewConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<New>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToNewConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToNewConnectionEdge = Edge & NewConnectionEdge & {
+  __typename?: 'RootQueryToNewConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: New;
+};
+
+/** Page Info on the &quot;RootQueryToNewConnection&quot; */
+export type RootQueryToNewConnectionPageInfo = NewConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToNewConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Get information about the offset pagination state in the current connection */
+  offsetPagination?: Maybe<OffsetPaginationPageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToNewConnection connection */
+export type RootQueryToNewConnectionWhereArgs = {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  metaQuery?: InputMaybe<RootQueryToNewConnectionWhereArgsMetaQuery>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Paginate News with offsets */
+  offsetPagination?: InputMaybe<OffsetPagination>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type RootQueryToNewConnectionWhereArgsMetaArray = {
+  /** Custom field value */
+  compare?: InputMaybe<RootQueryToNewConnectionWhereArgsMetaCompareEnum>;
+  /** Custom field key */
+  key?: InputMaybe<Scalars['String']['input']>;
+  /** Custom field value */
+  type?: InputMaybe<RootQueryToNewConnectionWhereArgsMetaTypeEnum>;
+  /** Custom field value */
+  value?: InputMaybe<Scalars['String']['input']>;
+};
+
+export enum RootQueryToNewConnectionWhereArgsMetaCompareEnum {
+  Between = 'BETWEEN',
+  EqualTo = 'EQUAL_TO',
+  Exists = 'EXISTS',
+  GreaterThan = 'GREATER_THAN',
+  GreaterThanOrEqualTo = 'GREATER_THAN_OR_EQUAL_TO',
+  In = 'IN',
+  LessThan = 'LESS_THAN',
+  LessThanOrEqualTo = 'LESS_THAN_OR_EQUAL_TO',
+  Like = 'LIKE',
+  NotBetween = 'NOT_BETWEEN',
+  NotEqualTo = 'NOT_EQUAL_TO',
+  NotExists = 'NOT_EXISTS',
+  NotIn = 'NOT_IN',
+  NotLike = 'NOT_LIKE'
+}
+
+export type RootQueryToNewConnectionWhereArgsMetaQuery = {
+  metaArray?: InputMaybe<Array<InputMaybe<RootQueryToNewConnectionWhereArgsMetaArray>>>;
+  relation?: InputMaybe<RelationEnum>;
+};
+
+export enum RootQueryToNewConnectionWhereArgsMetaTypeEnum {
+  Binary = 'BINARY',
+  Char = 'CHAR',
+  Date = 'DATE',
+  Datetime = 'DATETIME',
+  Decimal = 'DECIMAL',
+  Numeric = 'NUMERIC',
+  Signed = 'SIGNED',
+  Time = 'TIME',
+  Unsigned = 'UNSIGNED'
+}
 
 /** Connection between the RootQuery type and the page type */
 export type RootQueryToPageConnection = Connection & PageConnection & {
@@ -7731,8 +8956,6 @@ export type RootQueryToPageConnectionPageInfo = PageConnectionPageInfo & PageInf
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7862,8 +9085,6 @@ export type RootQueryToPluginConnectionPageInfo = PageInfo & PluginConnectionPag
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -7909,8 +9130,6 @@ export type RootQueryToPostConnectionPageInfo = PageInfo & PostConnectionPageInf
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -8060,8 +9279,6 @@ export type RootQueryToPostFormatConnectionPageInfo = PageInfo & PostFormatConne
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -8105,12 +9322,131 @@ export type RootQueryToPostFormatConnectionWhereArgs = {
   /** Array of slugs to return term(s) for. Default empty. */
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
 };
+
+/** Connection between the RootQuery type and the Project type */
+export type RootQueryToProjectConnection = Connection & ProjectConnection & {
+  __typename?: 'RootQueryToProjectConnection';
+  /** Edges for the RootQueryToProjectConnection connection */
+  edges: Array<RootQueryToProjectConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Project>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToProjectConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToProjectConnectionEdge = Edge & ProjectConnectionEdge & {
+  __typename?: 'RootQueryToProjectConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Project;
+};
+
+/** Page Info on the &quot;RootQueryToProjectConnection&quot; */
+export type RootQueryToProjectConnectionPageInfo = PageInfo & ProjectConnectionPageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToProjectConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Get information about the offset pagination state in the current connection */
+  offsetPagination?: Maybe<OffsetPaginationPageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToProjectConnection connection */
+export type RootQueryToProjectConnectionWhereArgs = {
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  metaQuery?: InputMaybe<RootQueryToProjectConnectionWhereArgsMetaQuery>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Paginate Projects with offsets */
+  offsetPagination?: InputMaybe<OffsetPagination>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type RootQueryToProjectConnectionWhereArgsMetaArray = {
+  /** Custom field value */
+  compare?: InputMaybe<RootQueryToProjectConnectionWhereArgsMetaCompareEnum>;
+  /** Custom field key */
+  key?: InputMaybe<Scalars['String']['input']>;
+  /** Custom field value */
+  type?: InputMaybe<RootQueryToProjectConnectionWhereArgsMetaTypeEnum>;
+  /** Custom field value */
+  value?: InputMaybe<Scalars['String']['input']>;
+};
+
+export enum RootQueryToProjectConnectionWhereArgsMetaCompareEnum {
+  Between = 'BETWEEN',
+  EqualTo = 'EQUAL_TO',
+  Exists = 'EXISTS',
+  GreaterThan = 'GREATER_THAN',
+  GreaterThanOrEqualTo = 'GREATER_THAN_OR_EQUAL_TO',
+  In = 'IN',
+  LessThan = 'LESS_THAN',
+  LessThanOrEqualTo = 'LESS_THAN_OR_EQUAL_TO',
+  Like = 'LIKE',
+  NotBetween = 'NOT_BETWEEN',
+  NotEqualTo = 'NOT_EQUAL_TO',
+  NotExists = 'NOT_EXISTS',
+  NotIn = 'NOT_IN',
+  NotLike = 'NOT_LIKE'
+}
+
+export type RootQueryToProjectConnectionWhereArgsMetaQuery = {
+  metaArray?: InputMaybe<Array<InputMaybe<RootQueryToProjectConnectionWhereArgsMetaArray>>>;
+  relation?: InputMaybe<RelationEnum>;
+};
+
+export enum RootQueryToProjectConnectionWhereArgsMetaTypeEnum {
+  Binary = 'BINARY',
+  Char = 'CHAR',
+  Date = 'DATE',
+  Datetime = 'DATETIME',
+  Decimal = 'DECIMAL',
+  Numeric = 'NUMERIC',
+  Signed = 'SIGNED',
+  Time = 'TIME',
+  Unsigned = 'UNSIGNED'
+}
 
 /** Connection between the RootQuery type and the ContentNode type */
 export type RootQueryToRevisionsConnection = Connection & ContentNodeConnection & {
@@ -8143,8 +9479,6 @@ export type RootQueryToRevisionsConnectionPageInfo = ContentNodeConnectionPageIn
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -8266,8 +9600,6 @@ export type RootQueryToTagConnectionPageInfo = PageInfo & TagConnectionPageInfo 
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -8311,8 +9643,6 @@ export type RootQueryToTagConnectionWhereArgs = {
   /** Array of slugs to return term(s) for. Default empty. */
   slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
@@ -8349,8 +9679,6 @@ export type RootQueryToTaxonomyConnectionPageInfo = PageInfo & TaxonomyConnectio
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -8386,8 +9714,6 @@ export type RootQueryToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectio
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -8433,8 +9759,6 @@ export type RootQueryToTermNodeConnectionWhereArgs = {
   /** The Taxonomy to filter terms by */
   taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
   /** Array of term taxonomy IDs, to match when querying terms. */
-  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  /** Array of term taxonomy IDs, to match when querying terms. */
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
@@ -8471,8 +9795,6 @@ export type RootQueryToTestimonialConnectionPageInfo = PageInfo & TestimonialCon
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -8594,8 +9916,6 @@ export type RootQueryToThemeConnectionPageInfo = PageInfo & ThemeConnectionPageI
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -8631,8 +9951,6 @@ export type RootQueryToUserConnectionPageInfo = PageInfo & UserConnectionPageInf
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -8704,303 +10022,17 @@ export type RootQueryToUserRoleConnectionPageInfo = PageInfo & UserRoleConnectio
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
 
-/** The Yoast SEO breadcrumb config */
-export type SeoBreadcrumbs = {
-  __typename?: 'SEOBreadcrumbs';
-  archivePrefix?: Maybe<Scalars['String']['output']>;
-  boldLast?: Maybe<Scalars['Boolean']['output']>;
-  enabled?: Maybe<Scalars['Boolean']['output']>;
-  homeText?: Maybe<Scalars['String']['output']>;
-  notFoundText?: Maybe<Scalars['String']['output']>;
-  prefix?: Maybe<Scalars['String']['output']>;
-  searchPrefix?: Maybe<Scalars['String']['output']>;
-  separator?: Maybe<Scalars['String']['output']>;
-  showBlogPage?: Maybe<Scalars['Boolean']['output']>;
-};
-
-/** Types of cards */
-export enum SeoCardType {
-  Summary = 'summary',
-  SummaryLargeImage = 'summary_large_image'
+/** Location in the document where the script to be loaded */
+export enum ScriptLoadingGroupLocationEnum {
+  /** A script to be loaded in document at right before the closing `<body>` tag */
+  Footer = 'FOOTER',
+  /** A script to be loaded in document `<head>` tag */
+  Header = 'HEADER'
 }
-
-/** The Yoast SEO site level configuration data */
-export type SeoConfig = {
-  __typename?: 'SEOConfig';
-  breadcrumbs?: Maybe<SeoBreadcrumbs>;
-  contentTypes?: Maybe<SeoContentTypes>;
-  meta?: Maybe<SeoGlobalMeta>;
-  openGraph?: Maybe<SeoOpenGraph>;
-  redirects?: Maybe<Array<Maybe<SeoRedirect>>>;
-  schema?: Maybe<SeoSchema>;
-  social?: Maybe<SeoSocial>;
-  webmaster?: Maybe<SeoWebmaster>;
-};
-
-/** The Yoast SEO search appearance content types fields */
-export type SeoContentType = {
-  __typename?: 'SEOContentType';
-  archive?: Maybe<SeoContentTypeArchive>;
-  metaDesc?: Maybe<Scalars['String']['output']>;
-  metaRobotsNoindex?: Maybe<Scalars['Boolean']['output']>;
-  schema?: Maybe<SeoPageInfoSchema>;
-  schemaType?: Maybe<Scalars['String']['output']>;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Yoast SEO search appearance content types fields */
-export type SeoContentTypeArchive = {
-  __typename?: 'SEOContentTypeArchive';
-  archiveLink?: Maybe<Scalars['String']['output']>;
-  breadcrumbTitle?: Maybe<Scalars['String']['output']>;
-  fullHead?: Maybe<Scalars['String']['output']>;
-  hasArchive?: Maybe<Scalars['Boolean']['output']>;
-  metaDesc?: Maybe<Scalars['String']['output']>;
-  metaRobotsFollow?: Maybe<Scalars['String']['output']>;
-  metaRobotsIndex?: Maybe<Scalars['String']['output']>;
-  metaRobotsNofollow?: Maybe<Scalars['Boolean']['output']>;
-  metaRobotsNoindex?: Maybe<Scalars['Boolean']['output']>;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Yoast SEO search appearance content types */
-export type SeoContentTypes = {
-  __typename?: 'SEOContentTypes';
-  mediaItem?: Maybe<SeoContentType>;
-  page?: Maybe<SeoContentType>;
-  post?: Maybe<SeoContentType>;
-  testimonial?: Maybe<SeoContentType>;
-};
-
-/** The Yoast SEO meta data */
-export type SeoGlobalMeta = {
-  __typename?: 'SEOGlobalMeta';
-  author?: Maybe<SeoGlobalMetaAuthor>;
-  config?: Maybe<SeoGlobalMetaConfig>;
-  date?: Maybe<SeoGlobalMetaDate>;
-  homepage?: Maybe<SeoGlobalMetaHome>;
-  notFound?: Maybe<SeoGlobalMeta404>;
-};
-
-/** The Yoast SEO meta 404 data */
-export type SeoGlobalMeta404 = {
-  __typename?: 'SEOGlobalMeta404';
-  breadcrumb?: Maybe<Scalars['String']['output']>;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Yoast SEO Author data */
-export type SeoGlobalMetaAuthor = {
-  __typename?: 'SEOGlobalMetaAuthor';
-  description?: Maybe<Scalars['String']['output']>;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Yoast SEO meta config data */
-export type SeoGlobalMetaConfig = {
-  __typename?: 'SEOGlobalMetaConfig';
-  separator?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Yoast SEO Date data */
-export type SeoGlobalMetaDate = {
-  __typename?: 'SEOGlobalMetaDate';
-  description?: Maybe<Scalars['String']['output']>;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Yoast SEO homepage data */
-export type SeoGlobalMetaHome = {
-  __typename?: 'SEOGlobalMetaHome';
-  description?: Maybe<Scalars['String']['output']>;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Open Graph data */
-export type SeoOpenGraph = {
-  __typename?: 'SEOOpenGraph';
-  defaultImage?: Maybe<MediaItem>;
-  frontPage?: Maybe<SeoOpenGraphFrontPage>;
-};
-
-/** The Open Graph Front page data */
-export type SeoOpenGraphFrontPage = {
-  __typename?: 'SEOOpenGraphFrontPage';
-  description?: Maybe<Scalars['String']['output']>;
-  image?: Maybe<MediaItem>;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Schema for post type */
-export type SeoPageInfoSchema = {
-  __typename?: 'SEOPageInfoSchema';
-  raw?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoPostTypeBreadcrumbs = {
-  __typename?: 'SEOPostTypeBreadcrumbs';
-  text?: Maybe<Scalars['String']['output']>;
-  url?: Maybe<Scalars['String']['output']>;
-};
-
-/** The page info SEO details */
-export type SeoPostTypePageInfo = {
-  __typename?: 'SEOPostTypePageInfo';
-  schema?: Maybe<SeoPageInfoSchema>;
-};
-
-/** The Schema types */
-export type SeoPostTypeSchema = {
-  __typename?: 'SEOPostTypeSchema';
-  articleType?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  pageType?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  raw?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Yoast redirect data  (Yoast Premium only) */
-export type SeoRedirect = {
-  __typename?: 'SEORedirect';
-  format?: Maybe<Scalars['String']['output']>;
-  origin?: Maybe<Scalars['String']['output']>;
-  target?: Maybe<Scalars['String']['output']>;
-  type?: Maybe<Scalars['Int']['output']>;
-};
-
-/** The Yoast SEO schema data */
-export type SeoSchema = {
-  __typename?: 'SEOSchema';
-  companyLogo?: Maybe<MediaItem>;
-  companyName?: Maybe<Scalars['String']['output']>;
-  companyOrPerson?: Maybe<Scalars['String']['output']>;
-  homeUrl?: Maybe<Scalars['String']['output']>;
-  inLanguage?: Maybe<Scalars['String']['output']>;
-  logo?: Maybe<MediaItem>;
-  personLogo?: Maybe<MediaItem>;
-  personName?: Maybe<Scalars['String']['output']>;
-  siteName?: Maybe<Scalars['String']['output']>;
-  siteUrl?: Maybe<Scalars['String']['output']>;
-  wordpressSiteName?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Yoast SEO Social media links */
-export type SeoSocial = {
-  __typename?: 'SEOSocial';
-  facebook?: Maybe<SeoSocialFacebook>;
-  instagram?: Maybe<SeoSocialInstagram>;
-  linkedIn?: Maybe<SeoSocialLinkedIn>;
-  mySpace?: Maybe<SeoSocialMySpace>;
-  otherSocials?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  pinterest?: Maybe<SeoSocialPinterest>;
-  twitter?: Maybe<SeoSocialTwitter>;
-  wikipedia?: Maybe<SeoSocialWikipedia>;
-  youTube?: Maybe<SeoSocialYoutube>;
-};
-
-export type SeoSocialFacebook = {
-  __typename?: 'SEOSocialFacebook';
-  defaultImage?: Maybe<MediaItem>;
-  url?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoSocialInstagram = {
-  __typename?: 'SEOSocialInstagram';
-  url?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoSocialLinkedIn = {
-  __typename?: 'SEOSocialLinkedIn';
-  url?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoSocialMySpace = {
-  __typename?: 'SEOSocialMySpace';
-  url?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoSocialPinterest = {
-  __typename?: 'SEOSocialPinterest';
-  metaTag?: Maybe<Scalars['String']['output']>;
-  url?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoSocialTwitter = {
-  __typename?: 'SEOSocialTwitter';
-  cardType?: Maybe<SeoCardType>;
-  username?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoSocialWikipedia = {
-  __typename?: 'SEOSocialWikipedia';
-  url?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoSocialYoutube = {
-  __typename?: 'SEOSocialYoutube';
-  url?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Schema types for Taxonomy */
-export type SeoTaxonomySchema = {
-  __typename?: 'SEOTaxonomySchema';
-  raw?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoUser = {
-  __typename?: 'SEOUser';
-  breadcrumbTitle?: Maybe<Scalars['String']['output']>;
-  canonical?: Maybe<Scalars['String']['output']>;
-  fullHead?: Maybe<Scalars['String']['output']>;
-  language?: Maybe<Scalars['String']['output']>;
-  metaDesc?: Maybe<Scalars['String']['output']>;
-  metaRobotsNofollow?: Maybe<Scalars['String']['output']>;
-  metaRobotsNoindex?: Maybe<Scalars['String']['output']>;
-  opengraphDescription?: Maybe<Scalars['String']['output']>;
-  opengraphImage?: Maybe<MediaItem>;
-  opengraphTitle?: Maybe<Scalars['String']['output']>;
-  region?: Maybe<Scalars['String']['output']>;
-  schema?: Maybe<SeoUserSchema>;
-  social?: Maybe<SeoUserSocial>;
-  title?: Maybe<Scalars['String']['output']>;
-  twitterDescription?: Maybe<Scalars['String']['output']>;
-  twitterImage?: Maybe<MediaItem>;
-  twitterTitle?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Schema types for User */
-export type SeoUserSchema = {
-  __typename?: 'SEOUserSchema';
-  articleType?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  pageType?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  raw?: Maybe<Scalars['String']['output']>;
-};
-
-export type SeoUserSocial = {
-  __typename?: 'SEOUserSocial';
-  facebook?: Maybe<Scalars['String']['output']>;
-  instagram?: Maybe<Scalars['String']['output']>;
-  linkedIn?: Maybe<Scalars['String']['output']>;
-  mySpace?: Maybe<Scalars['String']['output']>;
-  pinterest?: Maybe<Scalars['String']['output']>;
-  soundCloud?: Maybe<Scalars['String']['output']>;
-  twitter?: Maybe<Scalars['String']['output']>;
-  wikipedia?: Maybe<Scalars['String']['output']>;
-  youTube?: Maybe<Scalars['String']['output']>;
-};
-
-/** The Yoast SEO  webmaster fields */
-export type SeoWebmaster = {
-  __typename?: 'SEOWebmaster';
-  baiduVerify?: Maybe<Scalars['String']['output']>;
-  googleVerify?: Maybe<Scalars['String']['output']>;
-  msVerify?: Maybe<Scalars['String']['output']>;
-  yandexVerify?: Maybe<Scalars['String']['output']>;
-};
 
 /** The strategy to use when loading the script */
 export enum ScriptLoadingStrategyEnum {
@@ -9129,8 +10161,6 @@ export type Tag = DatabaseIdentifier & MenuItemLinkable & Node & TermNode & Unif
   name?: Maybe<Scalars['String']['output']>;
   /** Connection between the Tag type and the post type */
   posts?: Maybe<TagToPostConnection>;
-  /** The Yoast SEO data of the Tags taxonomy. */
-  seo?: Maybe<TaxonomySeo>;
   /** An alphanumeric identifier for the object unique to its type. */
   slug?: Maybe<Scalars['String']['output']>;
   /**
@@ -9216,8 +10246,6 @@ export type TagConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -9267,8 +10295,6 @@ export type TagToContentNodeConnectionPageInfo = ContentNodeConnectionPageInfo &
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -9390,8 +10416,6 @@ export type TagToPostConnectionPageInfo = PageInfo & PostConnectionPageInfo & Wp
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -9610,8 +10634,6 @@ export type TaxonomyConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -9633,34 +10655,6 @@ export enum TaxonomyIdTypeEnum {
   /** The name of the taxonomy */
   Name = 'NAME'
 }
-
-export type TaxonomySeo = {
-  __typename?: 'TaxonomySEO';
-  breadcrumbs?: Maybe<Array<Maybe<SeoPostTypeBreadcrumbs>>>;
-  canonical?: Maybe<Scalars['String']['output']>;
-  cornerstone?: Maybe<Scalars['Boolean']['output']>;
-  focuskw?: Maybe<Scalars['String']['output']>;
-  fullHead?: Maybe<Scalars['String']['output']>;
-  metaDesc?: Maybe<Scalars['String']['output']>;
-  metaKeywords?: Maybe<Scalars['String']['output']>;
-  metaRobotsNofollow?: Maybe<Scalars['String']['output']>;
-  metaRobotsNoindex?: Maybe<Scalars['String']['output']>;
-  opengraphAuthor?: Maybe<Scalars['String']['output']>;
-  opengraphDescription?: Maybe<Scalars['String']['output']>;
-  opengraphImage?: Maybe<MediaItem>;
-  opengraphModifiedTime?: Maybe<Scalars['String']['output']>;
-  opengraphPublishedTime?: Maybe<Scalars['String']['output']>;
-  opengraphPublisher?: Maybe<Scalars['String']['output']>;
-  opengraphSiteName?: Maybe<Scalars['String']['output']>;
-  opengraphTitle?: Maybe<Scalars['String']['output']>;
-  opengraphType?: Maybe<Scalars['String']['output']>;
-  opengraphUrl?: Maybe<Scalars['String']['output']>;
-  schema?: Maybe<SeoTaxonomySchema>;
-  title?: Maybe<Scalars['String']['output']>;
-  twitterDescription?: Maybe<Scalars['String']['output']>;
-  twitterImage?: Maybe<MediaItem>;
-  twitterTitle?: Maybe<Scalars['String']['output']>;
-};
 
 /** Connection between the Taxonomy type and the ContentType type */
 export type TaxonomyToContentTypeConnection = Connection & ContentTypeConnection & {
@@ -9693,8 +10687,6 @@ export type TaxonomyToContentTypeConnectionPageInfo = ContentTypeConnectionPageI
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -9730,8 +10722,6 @@ export type TaxonomyToTermNodeConnectionPageInfo = PageInfo & TermNodeConnection
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -9831,8 +10821,6 @@ export type TermNodeConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -9882,8 +10870,6 @@ export type TermNodeToEnqueuedScriptConnectionPageInfo = EnqueuedScriptConnectio
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -9919,8 +10905,6 @@ export type TermNodeToEnqueuedStylesheetConnectionPageInfo = EnqueuedStylesheetC
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -10020,8 +11004,6 @@ export type Testimonial = ContentNode & DatabaseIdentifier & MenuItemLinkable & 
   previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
   /** Whether the object is a node in the preview state */
   previewRevisionId?: Maybe<Scalars['ID']['output']>;
-  /** The Yoast SEO data of the ContentNode */
-  seo?: Maybe<PostTypeSeo>;
   /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
   slug?: Maybe<Scalars['String']['output']>;
   /** The current status of the object */
@@ -10108,8 +11090,6 @@ export type TestimonialConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -10184,8 +11164,6 @@ export type TestimonialToTestimonialConnectionPageInfo = PageInfo & TestimonialC
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -10256,8 +11234,6 @@ export type ThemeConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -10280,6 +11256,39 @@ export type UniformResourceIdentifiable = {
   uri?: Maybe<Scalars['String']['output']>;
 };
 
+/** Input for the updateAbc mutation. */
+export type UpdateAbcInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the Abc object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** The payload for the updateAbc mutation. */
+export type UpdateAbcPayload = {
+  __typename?: 'UpdateAbcPayload';
+  /** The Post object mutation type. */
+  abc?: Maybe<Abc>;
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+};
+
 /** Input for the updateCategory mutation. */
 export type UpdateCategoryInput = {
   /** The slug that the category will be an alias of */
@@ -10292,7 +11301,9 @@ export type UpdateCategoryInput = {
   id: Scalars['ID']['input'];
   /** The name of the category object to mutate */
   name?: InputMaybe<Scalars['String']['input']>;
-  /** The ID of the category that should be set as the parent */
+  /** The database ID of the category that should be set as the parent. This field cannot be used in conjunction with parentId */
+  parentDatabaseId?: InputMaybe<Scalars['Int']['input']>;
+  /** The ID of the category that should be set as the parent. This field cannot be used in conjunction with parentDatabaseId */
   parentId?: InputMaybe<Scalars['ID']['input']>;
   /** If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name. */
   slug?: InputMaybe<Scalars['String']['input']>;
@@ -10309,8 +11320,6 @@ export type UpdateCategoryPayload = {
 
 /** Input for the updateComment mutation. */
 export type UpdateCommentInput = {
-  /** The approval status of the comment. */
-  approved?: InputMaybe<Scalars['String']['input']>;
   /** The name of the comment's author. */
   author?: InputMaybe<Scalars['String']['input']>;
   /** The email of the comment's author. */
@@ -10389,6 +11398,39 @@ export type UpdateMediaItemPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The MediaItem object mutation type. */
   mediaItem?: Maybe<MediaItem>;
+};
+
+/** Input for the updateNew mutation. */
+export type UpdateNewInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the New object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** The payload for the updateNew mutation. */
+export type UpdateNewPayload = {
+  __typename?: 'UpdateNewPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  new?: Maybe<New>;
 };
 
 /** Input for the updatePage mutation. */
@@ -10504,6 +11546,39 @@ export type UpdatePostPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The Post object mutation type. */
   post?: Maybe<Post>;
+};
+
+/** Input for the updateProject mutation. */
+export type UpdateProjectInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the Project object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** The payload for the updateProject mutation. */
+export type UpdateProjectPayload = {
+  __typename?: 'UpdateProjectPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  project?: Maybe<Project>;
 };
 
 /** Input for the updateSettings mutation. */
@@ -10733,8 +11808,6 @@ export type User = Commenter & DatabaseIdentifier & Node & UniformResourceIdenti
   revisions?: Maybe<UserToRevisionsConnection>;
   /** Connection between the User type and the UserRole type */
   roles?: Maybe<UserToUserRoleConnection>;
-  /** The Yoast SEO data of a user */
-  seo?: Maybe<SeoUser>;
   /** Whether the Toolbar should be displayed when the user is viewing the site. */
   shouldShowAdminToolbar?: Maybe<Scalars['Boolean']['output']>;
   /** The slug for the user. This field is equivalent to WP_User-&gt;user_nicename */
@@ -10865,8 +11938,6 @@ export type UserConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -10930,8 +12001,6 @@ export type UserRoleConnectionPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -10946,10 +12015,6 @@ export enum UserRoleEnum {
   Contributor = 'CONTRIBUTOR',
   /** User role with specific capabilities */
   Editor = 'EDITOR',
-  /** User role with specific capabilities */
-  SeoEditor = 'SEO_EDITOR',
-  /** User role with specific capabilities */
-  SeoManager = 'SEO_MANAGER',
   /** User role with specific capabilities */
   Subscriber = 'SUBSCRIBER'
 }
@@ -10985,8 +12050,6 @@ export type UserToCommentConnectionPageInfo = CommentConnectionPageInfo & PageIn
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -11047,8 +12110,8 @@ export type UserToCommentConnectionWhereArgs = {
   parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Search term(s) to retrieve matching comments for. */
   search?: InputMaybe<Scalars['String']['input']>;
-  /** Comment status to limit results by. */
-  status?: InputMaybe<Scalars['String']['input']>;
+  /** One or more Comment Statuses to limit results by */
+  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -11084,8 +12147,6 @@ export type UserToEnqueuedScriptConnectionPageInfo = EnqueuedScriptConnectionPag
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -11121,8 +12182,6 @@ export type UserToEnqueuedStylesheetConnectionPageInfo = EnqueuedStylesheetConne
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -11158,8 +12217,6 @@ export type UserToMediaItemConnectionPageInfo = MediaItemConnectionPageInfo & Pa
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -11287,8 +12344,6 @@ export type UserToPageConnectionPageInfo = PageConnectionPageInfo & PageInfo & W
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -11416,8 +12471,6 @@ export type UserToPostConnectionPageInfo = PageInfo & PostConnectionPageInfo & W
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -11565,8 +12618,6 @@ export type UserToRevisionsConnectionPageInfo = ContentNodeConnectionPageInfo & 
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -11688,8 +12739,6 @@ export type UserToUserRoleConnectionPageInfo = PageInfo & UserRoleConnectionPage
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
@@ -11746,8 +12795,6 @@ export type WpPageInfo = {
   hasPreviousPage: Scalars['Boolean']['output'];
   /** Get information about the offset pagination state in the current connection */
   offsetPagination?: Maybe<OffsetPaginationPageInfo>;
-  /** Raw schema for page */
-  seo?: Maybe<SeoPostTypePageInfo>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
